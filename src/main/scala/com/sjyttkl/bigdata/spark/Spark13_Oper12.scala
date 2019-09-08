@@ -57,6 +57,8 @@ object Spark13_Oper12 {
     combineRDD.foreach(println)
 //    aggrRDD.saveAsTextFile("output")
 
+    println(listRDD.countByKey())//
+
   }
 }
 //声明分区器

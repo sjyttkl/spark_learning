@@ -37,6 +37,9 @@ object Spark14_Action {
     rdd3.takeOrdered(3).foreach(println) //取第三个元素，不排序
     rdd4.takeOrdered(3).foreach(println) //取排序后 前三个元素
 
+    println(rdd1.aggregate(0)(_+_,_+_)) //将该RDD所有元素相加得到结果 55,把，先分区内相加，在分区间相加
+    println(rdd1.aggregate(10)(_+_,_+_)) //将该RDD所有元素相加得到结果85 ，但是初始值会同时作用在分区内核分区间，所以会多10 出来 和 aggregateByKey 不一样的。
+    println(rdd1.fold(10)(_+_)) //将所有元素相加得到结果
 
   }
 }

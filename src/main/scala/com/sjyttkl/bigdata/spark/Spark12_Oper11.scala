@@ -35,6 +35,10 @@ object Spark12_Oper11 {
 //    listRDD.zip(listRDD)//拉链（1,2），这里的拉链，必须保持每个分区数据一样多。和scala里的不一样的。同时分区数也要一样才行。
 //    coalesceRDD.saveAsTextFile("output")
 
+     listRDD.saveAsTextFile("output1")
+     //listRDD.saveAsSequenceFile("output2")#将数据集中的元素以Hadoop sequencefile的格式保存到指定的目录下，可以使HDFS或者其他Hadoop支持的文件系统。
+     listRDD.saveAsObjectFile("output3") //byteWrite
+
 
   }
 }

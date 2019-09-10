@@ -6,4 +6,4 @@
 /.idea/
 target
 *.iml
-/output/
+/output*/

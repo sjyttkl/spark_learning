@@ -18,6 +18,11 @@
             <!--<artifactId>hadoop-client</artifactId>-->
             <!--<version>2.7.3</version>-->
         <!--</dependency>-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.27</version>
+        </dependency>
     </dependencies>
     <!--bulil 这里是写scala的插件-->
     <build>

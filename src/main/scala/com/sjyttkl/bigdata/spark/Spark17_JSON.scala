@@ -11,7 +11,7 @@ import scala.util.parsing.json.JSON
   * version: 1.0
   * description: RDD中的函数传递
   */
-object Spark16_Checkpoint {
+object Spark17_JSON {
   def main(args: Array[String]): Unit = {
 
     val config :SparkConf = new SparkConf().setMaster("local[*]").setAppName("WordCount")

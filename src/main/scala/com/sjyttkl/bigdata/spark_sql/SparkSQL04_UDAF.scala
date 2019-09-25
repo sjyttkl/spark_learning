@@ -48,7 +48,7 @@ object SparkSQL04_UDAF {
   }
 }
 
-//声明用户自定义聚合函数
+//声明用户自定义聚合函数（弱类型）
 // 1, 继承：UserDefinedAggregateFunction
 //2,实现方法
 class MyAgeAvgFunction extends UserDefinedAggregateFunction{

@@ -31,14 +31,14 @@ object SparkSQL03_transform1 {
 
 
     //RDD --直接转-  DataSet，要求RDD，同时要有结构，同时要有类型
-    var userRDD: RDD[User] = rdd.map {
+    var userRDD: RDD[User2] = rdd.map {
       case (id, name) => {
-        User(id, name)
+        User2(id, name)
       }
 
     }
-    var userDS: Dataset[User] = userRDD.toDS()
-    val rdd1:RDD[User] = userDS.rdd
+    var userDS: Dataset[User2] = userRDD.toDS()
+    val rdd1:RDD[User2] = userDS.rdd
 
     rdd1.foreach(println)
 
@@ -49,4 +49,4 @@ object SparkSQL03_transform1 {
 }
 
 //创建样例类，DataSet需要类型
-case class User(id:Int,name:String);
+case class User2(id:Int,name:String);

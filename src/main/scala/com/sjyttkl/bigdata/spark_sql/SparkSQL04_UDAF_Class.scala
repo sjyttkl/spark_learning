@@ -3,7 +3,6 @@ package com.sjyttkl.bigdata.spark_sql
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.expressions.{Aggregator, MutableAggregationBuffer, UserDefinedAggregateFunction}
-import org.apache.spark.sql.types.{DataType, DoubleType, LongType, StructType}
 import org.apache.spark.sql._
 
 /**

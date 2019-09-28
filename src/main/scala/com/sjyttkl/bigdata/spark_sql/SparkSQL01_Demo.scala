@@ -3,7 +3,7 @@ package com.sjyttkl.bigdata.spark_sql
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.{SparkConf, SparkContext}
 
-import scala.tools.nsc.interpreter.session
+
 
 /**
   * Create with: com.sjyttkl.bigdata.spark_sql

@@ -1,6 +1,7 @@
 package com.sjyttkl.bigdata.Spark_streaming
 
 import org.apache.spark.SparkConf
+import org.apache.spark.deploy.SparkSubmit
 import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
@@ -15,7 +16,7 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 object SparkStreaming01_WordCount {
   def main(args: Array[String]): Unit = {
     //使用SparkStreaming 完成WordCount
-
+    SparkSubmit
     //SparkSQL
     val config: SparkConf = new SparkConf().setMaster("local[*]").setAppName("SparkStreaming01_WordCount")
 

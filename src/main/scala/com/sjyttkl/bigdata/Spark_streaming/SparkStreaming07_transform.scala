@@ -36,25 +36,25 @@ object SparkStreaming07_transform {
       }
     }
 
-    //TODO 代码（Driver)
-    socketLineStreaming.transform{
-      case rdd=>{
-        //TODO 代码（Driver)(m  运行采集周期 次)
-        rdd.map{
-          case x=>{
-            //TODO 代码 （Executer)
-            x
-          }
-        }
-      }
-    }
+//    //TODO 代码（Driver)
+//    socketLineStreaming.transform{
+//      case rdd=>{
+//        //TODO 代码（Driver)(m  运行采集周期 次)
+//        rdd.map{
+//          case x=>{
+//            //TODO 代码 （Executer)
+//            x
+//          }
+//        }
+//      }
+//    }
 
     socketLineStreaming.foreachRDD(rdd=>{
       rdd.foreach(println)
     })
 
     //打印结果
-    stateDStream.print()
+//    stateDStream.print()
 
     //streamingContext.stop()  //不能停止我们的采集功能
 

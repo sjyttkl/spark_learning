@@ -76,7 +76,7 @@ class MyReceiver(host: String, port: Int) extends Receiver[String](StorageLevel.
 
     var line: String = null
 
-    while ((line = reader.readLine()) != null) {
+    while ((line == reader.readLine()) != null) {
       //将采集的数据，存储到采集器的内部
       if ("END".equals(line))
         {

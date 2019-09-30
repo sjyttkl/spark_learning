@@ -45,6 +45,6 @@ object SparkStreaming02_FileDataSource {
     //Drvier等待采集器停止，
     streamingContext.awaitTermination()
 
-   //nc -lc 99999   linux 下往9999端口发数据。
+   //nc -lc 9999  linux 下往9999端口发数据。
   }
 }

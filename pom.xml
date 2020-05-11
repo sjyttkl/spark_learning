@@ -53,7 +53,7 @@
         <dependency>
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-exec</artifactId>
-            <version>[2.3.4,)</version>
+            <version>2.3.4</version>
             <!--<scope>provided</scope>-->
         </dependency>
 
@@ -129,7 +129,7 @@
 
     <!--bulil 这里是写scala的插件-->
     <build>
-        <finalName>WordCount</finalName>
+        <finalName>spark_learning</finalName>
         <plugins>
             <plugin>
                 <groupId>net.alchim31.maven</groupId>

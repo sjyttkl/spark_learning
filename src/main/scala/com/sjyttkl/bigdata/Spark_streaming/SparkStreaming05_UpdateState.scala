@@ -11,7 +11,7 @@ import org.apache.spark.streaming.receiver.Receiver
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /**
-  * Create with: com.sjyttkl.bigdata.Spark_streaming 
+  * Create with: com.sjyttkl.bigdata.Spark_streaming
   * author: sjyttkl
   * E-mail:  695492835@qq.com
   * date: 2019/9/29 12:53

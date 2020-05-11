@@ -33,6 +33,7 @@ object Spark13_Oper12 {
     //    listRDD.reduceByKey() //中间存在shuffle，但是在之前已经存在一个简单的预聚合操作，导致效率高，性能会得到提高
     //aggregateByKey 主要是为了求 每个分区的最大值，再对每个分区间进行相加
 //    var aggrRDD: RDD[(String, Int)] = listRDD.aggregateByKey(0)(math.max(_, _), _ + _) //第一个是初始值（看需求，第二个参数，表示两两求最大值。
+    //https://blog.csdn.net/qaz_125/article/details/83140649 参考
     var aggrRDD: RDD[(String, Int)] =listRDD.aggregateByKey(0)(_+_,_+_)//这里其实就是分区内相加，分区间也相加，就是求wordCount
 
     var foldRDD: RDD[(String, Int)]  = listRDD.foldByKey(0)(_+_)//这里比aggregateByKey 少了一个参数，表示分区内核分区间的算法可以使用一样的,s是对上面的简化

@@ -19,34 +19,61 @@
         <spark.version>2.1.2</spark.version>
         <hadoop.version>2.7.3</hadoop.version>
         <hbase.version>1.1.6</hbase.version>
-        <spark.home>/opt/spark-2.2.0-bin-hadoop2.7</spark.home>
+        <!--        <spark.home>/opt/spark-2.2.0-bin-hadoop2.7</spark.home>-->
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>com.hadoop.gplcompression</groupId>
+            <artifactId>hadoop-lzo</artifactId>
+            <version>0.4.20</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>com.google.guava</groupId>-->
+        <!--            <artifactId>guava</artifactId>-->
+        <!--            <version>28.1-jre</version>-->
+        <!--        </dependency>-->
+        <!--         https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <!--        <dependency>-->
+        <!--            <groupId>com.google.code.gson</groupId>-->
+        <!--            <artifactId>gson</artifactId>-->
+        <!--            <version>2.8.5</version>-->
+        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.anarres.lzo/lzo-hadoop -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.anarres.lzo</groupId>-->
+        <!--            <artifactId>lzo-hadoop</artifactId>-->
+        <!--            <version>1.0.5</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+        <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>${scala.version}</version>
+            <scope>compile</scope>
         </dependency>
-
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.spark</groupId>-->
+        <!--            <artifactId>spark-catalyst_2.11</artifactId>-->
+        <!--&lt;!&ndash;            此处版本是对应的scala版本2.11.8&ndash;&gt;-->
+        <!--            <version>${spark.version}</version>-->
+        <!--&lt;!&ndash;            我的是spark2.3.1&ndash;&gt;-->
+        <!--            <scope>compile</scope>-->
+        <!--&lt;!&ndash;            //特别注意这里要使用compile&ndash;&gt;-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.12</artifactId>
-            <version>2.4.3</version>
-            <!--<scope>provided</scope>-->
+            <artifactId>spark-core_${scala.version.major}</artifactId>
+            <version>${spark.version}</version>
+            <!--            <version>2.4.3</version>-->
+            <scope>compile</scope>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.scala-lang</groupId>-->
-            <!--<artifactId>scala-library</artifactId>-->
-            <!--<version>2.11.1</version>-->
-
-        <!--</dependency>-->
-
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_${scala.version.major}</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.hive/hive-exec -->
@@ -54,14 +81,14 @@
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-exec</artifactId>
             <version>2.3.4</version>
-            <!--<scope>provided</scope>-->
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-yarn_2.11</artifactId>
+            <artifactId>spark-yarn_${scala.version.major}</artifactId>
             <version>2.1.1</version>
-            <!--<scope>provided</scope>-->
+            <scope>compile</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-hive -->
@@ -69,48 +96,131 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-hive_${scala.version.major}</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
             <!--pom中的provided指的是编译需要，发布不需要，当我们通过spark-submit提交时，spark会提供需要的streaming包，-->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_${scala.version.major}</artifactId>
+            <version>2.1.1</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.scala-tools</groupId>
             <artifactId>maven-scala-plugin</artifactId>
             <version>2.15.1</version>
+            <scope>compile</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
+            <version>2.7.3</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming_2.12</artifactId>
             <version>2.4.0</version>
-            <!--<scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
         <!--从kafka中采集数据-->
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming-kafka-0-8_2.11</artifactId>
             <version>2.1.1</version>
-            <!--<scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>0.11.0.2</version>
-            <!--<scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
 
 
-
-        <!--<dependency>-->
-            <!--<groupId>org.apache.hadoop</groupId>-->
-            <!--<artifactId>hadoop-client</artifactId>-->
-            <!--<version>2.7.3</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>2.7.3</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.27</version>
+            <scope>provided</scope>
         </dependency>
+
+        <!--工具类-->
+        <dependency>
+            <groupId>com.vdian</groupId>
+            <artifactId>VdianCommon</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--hanlp -->
+        <dependency>
+            <groupId>com.hankcs</groupId>
+            <artifactId>hanlp</artifactId>
+            <version>portable-1.7.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--        自动机结合DoubleArrayTrie极速多模式匹配-->
+        <dependency>
+            <groupId>com.hankcs</groupId>
+            <artifactId>aho-corasick-double-array-trie</artifactId>
+            <version>1.2.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.huaban/jieba-analysis -->
+        <!--        <dependency>-->
+        <!--            <groupId>com.huaban</groupId>-->
+        <!--            <artifactId>jieba-analysis</artifactId>-->
+        <!--            <version>1.0.2</version>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.ansj</groupId>
+            <artifactId>ansj_seg</artifactId>
+            <version>5.1.6</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--opencc4j 简体转繁体-->
+        <dependency>
+            <groupId>com.github.houbb</groupId>
+            <artifactId>opencc4j</artifactId>
+            <version>1.0.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <!--汉子转拼音-->
+            <groupId>com.github.stuxuhai</groupId>
+            <artifactId>jpinyin</artifactId>
+            <version>1.1.8</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version><!--版本号自己选一个就行-->
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.jetbrains</groupId>-->
+        <!--            <artifactId>annotations</artifactId>-->
+        <!--            <version>RELEASE</version>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>-->
     </dependencies>
+
 
     <repositories>
         <repository>
@@ -127,10 +237,11 @@
         </pluginRepository>
     </pluginRepositories>
 
-    <!--bulil 这里是写scala的插件-->
+    <!--bulid 这里是写scala的插件-->
     <build>
-        <finalName>spark_learning</finalName>
+        <finalName>QuerySuggest</finalName>
         <plugins>
+            <!-- 这里是  scala 打包插件，删除了scala就不会被打包进入jar了-->
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
@@ -152,7 +263,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>WordCount</mainClass>
+                            <mainClass>spark_learning</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -174,4 +285,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

@@ -24,44 +24,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.hadoop.gplcompression</groupId>
-            <artifactId>hadoop-lzo</artifactId>
-            <version>0.4.20</version>
-            <scope>compile</scope>
-        </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>com.google.guava</groupId>-->
-        <!--            <artifactId>guava</artifactId>-->
-        <!--            <version>28.1-jre</version>-->
-        <!--        </dependency>-->
-        <!--         https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.google.code.gson</groupId>-->
-        <!--            <artifactId>gson</artifactId>-->
-        <!--            <version>2.8.5</version>-->
-        <!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.anarres.lzo/lzo-hadoop -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.anarres.lzo</groupId>-->
-        <!--            <artifactId>lzo-hadoop</artifactId>-->
-        <!--            <version>1.0.5</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
-        <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>${scala.version}</version>
             <scope>compile</scope>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.spark</groupId>-->
-        <!--            <artifactId>spark-catalyst_2.11</artifactId>-->
-        <!--&lt;!&ndash;            此处版本是对应的scala版本2.11.8&ndash;&gt;-->
-        <!--            <version>${spark.version}</version>-->
-        <!--&lt;!&ndash;            我的是spark2.3.1&ndash;&gt;-->
-        <!--            <scope>compile</scope>-->
-        <!--&lt;!&ndash;            //特别注意这里要使用compile&ndash;&gt;-->
-        <!--        </dependency>-->
+
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scala.version.major}</artifactId>
@@ -148,79 +116,8 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.27</version>
-            <scope>provided</scope>
         </dependency>
-
-        <!--工具类-->
-        <dependency>
-            <groupId>com.vdian</groupId>
-            <artifactId>VdianCommon</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!--hanlp -->
-        <dependency>
-            <groupId>com.hankcs</groupId>
-            <artifactId>hanlp</artifactId>
-            <version>portable-1.7.5</version>
-            <scope>provided</scope>
-        </dependency>
-        <!--        自动机结合DoubleArrayTrie极速多模式匹配-->
-        <dependency>
-            <groupId>com.hankcs</groupId>
-            <artifactId>aho-corasick-double-array-trie</artifactId>
-            <version>1.2.1</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.huaban/jieba-analysis -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.huaban</groupId>-->
-        <!--            <artifactId>jieba-analysis</artifactId>-->
-        <!--            <version>1.0.2</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>org.ansj</groupId>
-            <artifactId>ansj_seg</artifactId>
-            <version>5.1.6</version>
-            <scope>provided</scope>
-        </dependency>
-        <!--opencc4j 简体转繁体-->
-        <dependency>
-            <groupId>com.github.houbb</groupId>
-            <artifactId>opencc4j</artifactId>
-            <version>1.0.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <!--汉子转拼音-->
-            <groupId>com.github.stuxuhai</groupId>
-            <artifactId>jpinyin</artifactId>
-            <version>1.1.8</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.16</version><!--版本号自己选一个就行-->
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.jetbrains</groupId>-->
-        <!--            <artifactId>annotations</artifactId>-->
-        <!--            <version>RELEASE</version>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
     </dependencies>
-
 
     <repositories>
         <repository>
@@ -285,5 +182,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

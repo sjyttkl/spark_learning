@@ -40,7 +40,7 @@ object example_demo {
     spark.conf.set("spark.sql.objectHashAggregate.sortBased.fallbackThreshold", "15360")
     println(spark.conf.get("spark.sql.objectHashAggregate.sortBased.fallbackThreshold"))
     //spark.sparkContext.hadoopConfiguration.set("mapreduce.fileoutputcommitter.marksuccessfuljobs", "true") //true则会生成 success文件
-
+    import spark.implicits._
     if (args.length != 0) {
       time = args(0)
       println(args(0))
